@@ -77,6 +77,103 @@ function my_location(){
 function location_assing(){
     window.location.assign('https://www.w3schools.com/')   // location assign load a new document
 }
-function history_back(){
+function history_back(){     // history back
     window.history.back();
 }
+function history_forward(){   // history forward
+    window.history.forward();
+}
+let confirm_text = ''
+function confirm_popup(){           // confirm pop up
+    if(confirm('are you confirm')){
+        confirm_text = 'Confirmed this'
+    }else{
+        confirm_text = 'Cancel this'
+    }
+    document.querySelector('.display_some').innerHTML = confirm_text
+    console.log(confirm_text);
+}
+let prom_text = ''
+function prompt_data(){
+    let prom_data = prompt('Write somethink','hello');  // prompt box
+    // if(prom_data == null || prom_data == ''){
+    //     prom_text = 'Empty this'
+    // }else{
+    //     prom_text = prom_data
+    // }
+    if(prom_data !== ''){
+        prom_text = prom_data
+    }else{
+        prom_text = 'Empty this'
+    }
+    document.querySelector('.display_some').innerHTML = prom_text
+}
+let set_time = ''
+function set_timeout(){
+    set_time = setTimeout(function(){    //set timeout 
+        set_time_out();
+    },1000); 
+}
+function set_time_out(){
+    alert('Set time out')
+}
+function clear_timeout(){    // clear timeout
+    clearTimeout(set_time)
+}
+let interval_data = ''
+function set_interval(){      // set interval
+    interval_data = setInterval(function(){
+        let date = new Date();
+        let local_date = date.toLocaleTimeString();
+        document.querySelector('.display_some').innerHTML = local_date;
+    },1000)
+}
+function clear_interval(){     // clear interval
+    clearInterval(interval_data)
+}
+
+//  js class 
+class cars{
+    constructor(brand){
+        this.carname = brand
+    }
+    present_car(){
+        return 'i have a ' + this.carname;
+    }
+}
+let a_cars = new cars('BMW');
+// document.querySelector('.display_some').innerHTML = a_cars.present_car()
+
+class bikes{
+    constructor(bikeBrand){
+        this.bike_name = bikeBrand;
+        // this.bike_color = color
+    }
+    p_bike(){
+        return 'my bike is ' + this.bike_name 
+    }
+}
+class Model extends bikes{     // class Inheritance
+    constructor(bikeBrand,bikeModel){
+        super(bikeBrand)              // call parent constructor use super
+        this.bike_model = bikeModel
+    }
+    bike_info(){
+        return this.p_bike() + ' the model is ' + this.bike_model
+    }
+}
+let bike_details = new Model('Yamaha','FZ-S')
+// document.querySelector('.display_some').innerHTML = bike_details.bike_info()
+
+class myCar {
+    constructor(name) {
+      this.name = name;
+    }
+    static hello() {            // class static
+      return "Hello!!";
+    }
+}
+let new_car = new myCar()
+document.querySelector('.display_some').innerHTML = myCar.hello()
+
+  
