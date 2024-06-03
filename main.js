@@ -67,6 +67,11 @@ let text = '5'
 let pad_start = text.padStart(6,'0')  // pad start 
 let from_arr = Array.from(pad_start)   // string to array 
 let new_arr = pad_start.split('')       // string to array
-let pad_end = text.padEnd(3,'0')        // pad end 
+let pad_end = text.padEnd(3,'0')        // pad end
+let new_str = 'hello\n' 
+let str_repeat =  new_str.repeat(4)
+let come_from = 'I am from Bangladesh, Bangladesh'
+let str_replace = come_from.replace('Bangladesh','Rangpur')
+// console.log(str_replace);
 
 
